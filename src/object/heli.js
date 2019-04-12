@@ -6,13 +6,14 @@ class Heli {
         this.y = 20;
         this.height = 35;
         this.width = 35;
-        this.heliX = 5;
-        this.acc = 2;
+        this.hSpeed = 0;
+        this.acc = 1.5;
         this.addListeners();
     }
 
     draw(){
-        this.x += this.heliX * this.direction;
+        this.physics();
+        this.x += this.hSpeed;
         this.ctx.beginPath();
         this.ctx.fillStyle = 'green';
         this.ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -20,14 +21,17 @@ class Heli {
     };
 
     addListeners(){
-        document.addEventListener('click', this.handleClick.bind);
+        document.addEventListener('click', this.handleClick.bind(this));
     };
-    
+
     handleClick(){
         console.log(this.direction)
         this.direction = this.direction * -1;
     };
 
+    physics(){
+        this.hSpeed += this.acc * this.direction;
+    } 
 
 
 
