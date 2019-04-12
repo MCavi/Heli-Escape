@@ -1,8 +1,10 @@
+
+
 class Ship {
     constructor(ctx){
         this.ctx = ctx;
         this.direction = 1;
-        this.x = 50;
+        this.x = 225;
         this.y = 450;
         this.height = 35;
         this.width = 35;
@@ -15,7 +17,7 @@ class Ship {
         this.physics();
         this.x += this.hSpeed;
         this.ctx.beginPath();
-        this.ctx.fillStyle = 'red';
+        this.ctx.fillStyle = 'grey';
         this.ctx.fillRect(this.x, this.y, this.width, this.height);
         this.ctx.closePath();
     };
@@ -30,24 +32,8 @@ class Ship {
     };
 
     physics(){
-        if (this.isHittingWall()) {
-            // hit detection
-            // game over
-            this.hSpeed = 0;
-            this.x = 200;
-        } else {
             this.hSpeed += this.acc * this.direction;
-        }
     } 
-
-    isHittingWall(){
-        if (this.x < 0 || this.x > 500) {
-            return true;
-        } else {
-            return false;
-        };
-    };
-
 
 }
 

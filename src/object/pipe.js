@@ -14,7 +14,7 @@ class Gate {
         this.ctx.beginPath();
         this.ctx.rect(this.x, this.y, this.width, this.height);
         this.ctx.rect(this.width + this.gap, this.y, 600, this.height);
-        this.ctx.fillStyle = "green";
+        this.ctx.fillStyle = "blue";
         this.ctx.fill();
         this.ctx.closePath();
     }
