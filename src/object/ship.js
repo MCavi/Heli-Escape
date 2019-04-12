@@ -1,7 +1,6 @@
 class Ship {
-    constructor(ctx, canvas){
+    constructor(ctx){
         this.ctx = ctx;
-        this.canvas = canvas;
         this.direction = 1;
         this.x = 50;
         this.y = 450;
@@ -16,7 +15,7 @@ class Ship {
         this.physics();
         this.x += this.hSpeed;
         this.ctx.beginPath();
-        this.ctx.fillStyle = 'green';
+        this.ctx.fillStyle = 'red';
         this.ctx.fillRect(this.x, this.y, this.width, this.height);
         this.ctx.closePath();
     };
