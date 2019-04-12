@@ -1,9 +1,10 @@
 class Ship {
-    constructor(ctx){
+    constructor(ctx, canvas){
         this.ctx = ctx;
+        this.canvas = canvas;
         this.direction = 1;
         this.x = 50;
-        this.y = 20;
+        this.y = 450;
         this.height = 35;
         this.width = 35;
         this.hSpeed = 0;
@@ -30,9 +31,23 @@ class Ship {
     };
 
     physics(){
-        this.hSpeed += this.acc * this.direction;
+        if (this.isHittingWall()) {
+            // hit detection
+            // game over
+            this.hSpeed = 0;
+            this.x = 200;
+        } else {
+            this.hSpeed += this.acc * this.direction;
+        }
     } 
 
+    isHittingWall(){
+        if (this.x < 0 || this.x > 500) {
+            return true;
+        } else {
+            return false;
+        };
+    };
 
 
 }

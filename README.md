@@ -1,4 +1,4 @@
-```
+
 ### Space Dodge
 Navigate a spaceship through obstacles by switching the direction in which it flies.
 
@@ -19,4 +19,3 @@ Navigate a spaceship through obstacles by switching the direction in which it fl
 * `Day 3`: Make the game end when the spaceship comes into contact with side walls or obstacles.
 
 
-```
