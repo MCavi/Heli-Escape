@@ -1,8 +1,8 @@
 {
-  "name": "HeliEscape",
+  "name": "SpaceDodge",
   "version": "1.0.0",
   "description": "Please read me",
-  "main": "helicopter.js",
+  "main": "spaceShip.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack -w --mode=development"

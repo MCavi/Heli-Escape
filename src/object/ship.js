@@ -1,4 +1,4 @@
-class Heli {
+class Ship {
     constructor(ctx){
         this.ctx = ctx;
         this.direction = 1;
@@ -37,4 +37,4 @@ class Heli {
 
 }
 
-export default Heli;
+export default Ship;
