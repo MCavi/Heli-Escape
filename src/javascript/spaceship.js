@@ -1,5 +1,5 @@
 import Ship from '../object/ship';
-import Gate from '../object/pipe';
+import Gate from '../object/gate';
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("hello world");
@@ -26,12 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // HIT DETECTION
+    // MAIN HIT DETECTION
     function hitDetected(){
-        if ( isHittingWall() ) {
-                alert("GAME OVER");
-                document.location.reload();
-                clearInterval(interval);
+        if ( isHittingWall() || isHittingGate() ) {
+            gameOver();
         }
     }
 
@@ -39,6 +37,35 @@ document.addEventListener('DOMContentLoaded', () => {
     function isHittingWall(){
         if (ship.x < -2 || ship.x > canvas.width - 35) {
             return true;
+        }
+    }
+
+    // Left gate hit detection.
+    function isHittingLeftGate(i) {
+        if (ship.x < gates[i].leftX + gates[i].leftWidth &&
+            ship.x + ship.width > gates[i].leftX &&
+            ship.y < gates[i].y + gates[i].height &&
+            ship.y + ship.height > gates[i].y) {
+            return true;
+        };
+    };
+
+    // Right gate hit detection.
+    function isHittingRightGate(i) {
+        if (ship.x < gates[i].rightX + gates[i].rightWidth &&
+            ship.x + ship.width > gates[i].rightX &&
+            ship.y < gates[i].y + gates[i].height &&
+            ship.y + ship.height > gates[i].y) {
+            return true;
+        }
+    }
+
+    // Gate hit detection
+    function isHittingGate() {
+        for ( let i = 0; i < gates.length; i++ ) {
+            if (isHittingLeftGate(i) || isHittingRightGate(i)) {
+                return true ;
+            }
         }
     }
 
@@ -50,6 +77,13 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.clearRect( 0, 0, canvas.width, canvas.height );
         ship.draw();
         checkGate();
+        isHittingGate();
+    }
+
+    function gameOver(){
+        alert("GAME OVER");
+        document.location.reload();
+        clearInterval(interval);
     }
 
     
