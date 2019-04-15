@@ -16,7 +16,7 @@ class Gate {
         this.height = 60;
         this.y = -60;
         
-    }
+    };
 
     draw(){
         this.y += this.vSpeed;
@@ -31,7 +31,7 @@ class Gate {
         this.ctx.fillStyle = "blue";
         this.ctx.fill();
         this.ctx.closePath();
-    }
-}
+    };
+};
 
 export default Gate;
