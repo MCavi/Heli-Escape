@@ -9,28 +9,38 @@ body {
 #canvas {
     
     position: absolute;
-    top:0;
-    bottom: 0;
+    top:130px;
+    /* bottom: 0; */
     left: 0;
     right: 0;
     margin:auto;
     background-color: rgb(255,220,139);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
     border: 2px;
     border-radius: 7px;
     box-shadow: 5px 5px 10px;
 }
 
 #startButton {
-    position: relative;
-    top: 300px;
+    position: absolute;
+    top: 41%;
     left: 41%;
+    justify-content: center;
     font-family: 'Chewy', cursive;
     font-size: 48px;
     border: none;
     cursor: pointer;
     outline: none;
     background: transparent;
+}
+
+.title {
+    display: flex;
+    top: 0;
+    justify-content: center;
+    font-family: 'Chewy', cursive;
+    font-size: 80px;
+    margin: 0px;
 }

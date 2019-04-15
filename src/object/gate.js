@@ -2,7 +2,7 @@ class Gate {
     constructor(ctx) {
         this.ctx = ctx;
 
-        this.vSpeed = 10;
+        this.vSpeed = 5;
         this.gap = 250;
 
         // Gate Widths

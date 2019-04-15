@@ -9,30 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctx = canvas.getContext('2d');
 
     const ship = new Ship(ctx);
-    const gates = [];
-    gates[0] = new Gate(ctx);
+   
+    document.getElementById('startButton').addEventListener('keydown', () => {
 
-
-
-
-    // var background = new Image();
-    // background.src = "https://ae01.alicdn.com/kf/HTB1SuU.e3KTBuNkSne1q6yJoXXaE/KATE-5x7ft-Cartoon-City-Night-Photo-Superhero-Party-Backdrop-Cosplay-Photography-Background-Kids-Birthday-Party-Decorations.jpg";
-
-    // Make sure the image is loaded first otherwise nothing will draw.
-    // background.onload = function () {
-    //     ctx.drawImage(background, 0, 0);
-    // }
-
-    
-    document.getElementById('startButton').addEventListener('click', () => {
+        const gates = [];
+        gates[0] = new Gate(ctx);
         const startButton = document.getElementById('startButton');
         startButton.style.display = 'none';
-
-        // background.onload = function () {
-        //     ctx.drawImage(background, 0, 0);
-        // }
         
-        const interval = setInterval(gameEngine, 30);
+        // const interval = setInterval(gameEngine, 30);
         
         let score = 0;
 
@@ -114,12 +99,12 @@ document.addEventListener('DOMContentLoaded', () => {
         function gameEngine() {
             hitDetected();
             ctx.clearRect( 0, 0, canvas.width, canvas.height );
-            ship.draw();
             checkGate();
             drawScore();
-            // requestAnimationFrame(gameEngine)
+            ship.draw();
+            requestAnimationFrame(gameEngine)
         };
-        // gameEngine();
+        gameEngine();
     }
     )
 
