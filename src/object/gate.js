@@ -2,11 +2,11 @@ class Gate {
     constructor(ctx) {
         this.ctx = ctx;
 
-        this.vSpeed = 5;
-        this.gap = 200;
+        this.vSpeed = 10;
+        this.gap = 250;
 
         // Gate Widths
-        this.leftWidth = Math.floor(Math.random() * (300 - 50) + 50);
+        this.leftWidth = Math.floor(Math.random() * (300 - 50) + 10);
         this.rightWidth = 600;
 
         // Gate Xs
@@ -28,7 +28,7 @@ class Gate {
         // Right gate
         this.ctx.rect(this.rightX, this.y, this.rightWidth, this.height);
 
-        this.ctx.fillStyle = "blue";
+        this.ctx.fillStyle = "rgb(86,84,106)";
         this.ctx.fill();
         this.ctx.closePath();
     };

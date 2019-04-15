@@ -7,14 +7,12 @@ class Ship {
         this.x = 225;
         this.y = 450;
         this.height = 40;
-        this.width = 80;
+        this.width = 90;
         this.hSpeed = 0;
         this.acc = 1.5;
         this.sprites = [159, 310, 460];
         this.frameCount = 0;
-        this.options = {
-
-        }
+        this.tilt = 10;
 
         this.addListeners();
     };
@@ -51,7 +49,6 @@ class Ship {
     };
 
     handleClick(){
-        console.log(this.direction);
         this.direction = this.direction * -1;
     };
 

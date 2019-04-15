@@ -2,9 +2,18 @@ import Ship from '../object/ship';
 import Gate from '../object/gate';
 
 document.addEventListener('DOMContentLoaded', () => {
+    
+    console.log("hello world");
 
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
+
+    const ship = new Ship(ctx);
+    const gates = [];
+    gates[0] = new Gate(ctx);
+
+
+
 
     // var background = new Image();
     // background.src = "https://ae01.alicdn.com/kf/HTB1SuU.e3KTBuNkSne1q6yJoXXaE/KATE-5x7ft-Cartoon-City-Night-Photo-Superhero-Party-Backdrop-Cosplay-Photography-Background-Kids-Birthday-Party-Decorations.jpg";
@@ -16,21 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
     document.getElementById('startButton').addEventListener('click', () => {
+        const startButton = document.getElementById('startButton');
+        startButton.style.display = 'none';
 
         // background.onload = function () {
         //     ctx.drawImage(background, 0, 0);
         // }
-
-        const startButton = document.getElementById('startButton');
-        startButton.style.display = 'none';
-        console.log("hello world");
         
-        const ship = new Ship(ctx);
-        const gates = [];
         const interval = setInterval(gameEngine, 30);
-
-
-        gates[0] = new Gate(ctx);
+        
         let score = 0;
 
         // Adds new gate once previous gate reaches 400px.
@@ -101,8 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     
         function drawScore() {
-            ctx.font = "48px sans serif";
-            ctx.fillStyle = "#0095DD";
+            ctx.font = "48px 'Chewy', cursive";
+            ctx.fillStyle = "white";
             ctx.fillText(score, 275, 50);
         };
         
@@ -112,8 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
             hitDetected();
             ctx.clearRect( 0, 0, canvas.width, canvas.height );
             ship.draw();
-            drawScore();
             checkGate();
+            drawScore();
             // requestAnimationFrame(gameEngine)
         };
         // gameEngine();
