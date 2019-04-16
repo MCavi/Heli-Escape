@@ -9,7 +9,7 @@ class Ship {
         this.height = 40;
         this.width = 90;
         this.hSpeed = 0;
-        this.acc = .7;
+        this.acc = .6;
         this.sprites = [159, 310, 460];
         this.frameCount = 0;
         this.tilt = 0;

@@ -5,6 +5,29 @@ document.addEventListener('DOMContentLoaded', () => {
     
     console.log("hello world");
 
+    // Firebase Config
+    const firebaseConfig = {
+        apiKey: "AIzaSyDMyAUaLi0HoaZsTsfFUJ7v0KjPSM5iERc",
+        authDomain: "heli-escape.firebaseapp.com",
+        databaseURL: "https://heli-escape.firebaseio.com",
+        projectId: "heli-escape",
+        storageBucket: "heli-escape.appspot.com",
+        messagingSenderId: "83868845549"
+    };
+    firebase.initializeApp(firebaseConfig);    
+
+    
+    const database = firebase.database();
+    const ref = database.ref('scores');
+    // Push to database
+    // const data = {
+    //     name: "MAC",
+    //     score: 44
+    // }
+    
+    // ref.push(data);
+
+    // Canvas
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
 

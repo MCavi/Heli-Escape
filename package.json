@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/MCavi/JavaScriptGame#readme",
   "dependencies": {
+    "firebase": "^5.9.4",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   }
