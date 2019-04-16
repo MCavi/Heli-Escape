@@ -1,33 +1,50 @@
 body {
-    height: 100vh;
-    width: 100vw;
     background-image: url("../assets/skylineV2.jpg");
-    background-position: center;
-    background-size: contain;
 }
 
 #canvas {
-    
-    position: absolute;
-    top:130px;
-    /* bottom: 0; */
-    left: 0;
-    right: 0;
-    margin:auto;
+    display: block;
+    margin: 0 auto;
     background-color: rgb(255,220,139);
-    /* background-position: center; */
-    /* background-repeat: no-repeat; */
-    /* background-size: cover; */
     border: 2px;
     border-radius: 7px;
     box-shadow: 5px 5px 10px;
 }
 
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+    padding: 0 10%;
+}
+
+.leaderboard {
+    width: 20%;
+    background-color: rgb(86,84,106);
+}
+
+.center {
+    width: 50%;
+    position: relative;
+}
+
+.right{
+    width: 20%;
+    /* background-color: black; */
+}
+
+.title {
+    margin-top: 3%;
+    font-family: 'Chewy', cursive;
+    font-size: 80px;
+}
+
 #startButton {
     position: absolute;
-    top: 41%;
-    left: 41%;
-    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-family: 'Chewy', cursive;
     font-size: 48px;
     border: none;
@@ -36,11 +53,62 @@ body {
     background: transparent;
 }
 
-.title {
-    display: flex;
-    top: 0;
-    justify-content: center;
+.gameover-title {
+    margin: 0;
+    padding: 0;
+    margin-top: 5%;
     font-family: 'Chewy', cursive;
-    font-size: 80px;
-    margin: 0px;
+    font-size: 54px;
 }
+
+#gameover {
+    background-color: rgb(86,84,106);
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: fit-content;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-bottom: 5%;
+    font-family: 'Chewy', cursive;
+    font-size: 48px;
+    color: whitesmoke;
+    display: none;
+    border-radius: 7px;
+    border: 2px;
+    box-shadow: 5px 5px 10px black;
+}
+
+#restart-button {
+    cursor: pointer;
+}
+
+#initial-input {
+    border-radius: 5px;
+    height: 30px;
+    
+}
+
+#initial-input[type="text"] {
+    font-family: 'Chewy', cursive;
+    font-size: 24px;
+    color: rgb(86,84,106);
+    padding-left: 5px;
+}
+
+#submit-button {
+    margin: 0;
+    margin-top: 3%;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background: transparent;
+    font-family: 'Chewy', cursive;
+    font-size: 48px;
+    color: whitesmoke;
+}
+
