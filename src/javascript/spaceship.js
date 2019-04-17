@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function gotData(data) {
         const scores = data.val();
         const keys = Object.keys(scores);
+        document.getElementById('submits').innerHTML = keys.length;
         const scoreList = []
         for (let idx = 0; idx < keys.length; idx++) {
 
@@ -84,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         document.getElementById("restart-button").onclick = () => { handleRestart() };
         document.getElementById('submit-button').onclick = () => { handleSubmit() };
+
 
         const gates = [];
         gates[0] = new Gate(ctx);
@@ -163,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         };
 
-        var count = 4;
+        let count = 4;
         function countdown() {
             if (count > 0) {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);

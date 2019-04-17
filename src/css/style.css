@@ -46,6 +46,27 @@ body {
     color: whitesmoke;
 }
 
+#total-scores-container {
+    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+#num-submits {
+    font-family: 'Chewy', cursive;
+    font-size: 30px;
+    color: whitesmoke;
+    text-decoration: underline;
+}
+
+#submits {
+    font-family: 'Chewy', cursive;
+    font-size: 30px;
+    color: whitesmoke;
+}
+
 .center {
     width: 50%;
     position: relative;
