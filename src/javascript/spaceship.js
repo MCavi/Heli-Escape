@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function handleSubmit(){
-            let name = document.getElementById('initial-input').value
+            let name = document.getElementById('initial-input').value.slice(0,3);
             const data = {
                 name: name,
                 score: score
