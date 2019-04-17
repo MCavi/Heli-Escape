@@ -1,9 +1,14 @@
 import Ship from '../object/ship';
 import Gate from '../object/gate';
 
+// ---------------------------------------------------------------------//
+// ---------------------------------------------------------------------//
+// ---------------------------------------------------------------------//
+// ---------------------------------------------------------------------//
+// ---------------------------------------------------------------------//
 document.addEventListener('DOMContentLoaded', () => {
     
-    console.log("Hello World");
+    
 
     // Firebase Config
     const firebaseConfig = {
@@ -33,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
             scoreList.push(scores[key]);
 
         };
-        
 
         scoreList.sort( ( obj1, obj2 ) => { 
             if (obj1.score < obj2.score) return 1;
@@ -51,12 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const score = highScores[idx].score;
             const li = document.createElement( 'li' );
             li.setAttribute("id", "leaderboard-item");
-            li.innerHTML = name + "  " + score;
+            li.innerHTML = name + " :   " + score;
             ul.appendChild(li);
         }
-
         
-        // console.log(name, score);
     };
 
     function errData(err) {
@@ -69,23 +71,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctx = canvas.getContext('2d');
 
     const ship = new Ship(ctx);
-    
-    // Create new element to html
-    
-    // var newEl = document.createElement('div');
-    // newEl.appendChild(document.createTextNode('Hello World!'));
-    // document.getElementById('body').appendChild(newEl);   
-    document.getElementById('startButton').addEventListener('keydown', () => {
-        
+
+
+    // ---------------------------------------------------------------------//
+    // ---------------------------------------------------------------------//
+    // ---------------------------------------------------------------------//
+    // ---------------------------------------------------------------------//
+    document.getElementById('startButton').addEventListener('click', () => {
+        const startButton = document.getElementById('startButton');
+        startButton.style.display = 'none';
         
         document.getElementById("restart-button").onclick = () => { handleRestart() };
         document.getElementById('submit-button').onclick = () => { handleSubmit() };
 
         const gates = [];
         gates[0] = new Gate(ctx);
-        const startButton = document.getElementById('startButton');
-        startButton.style.display = 'none';
-        
         let score = 0;
 
         // Adds new gate once previous gate reaches 400px.
@@ -161,6 +161,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('gameover').style.display = "flex";
             })
         };
+
+        var count = 4;
+        function countdown() {
+            if (count > 0) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ship.draw();
+                ctx.font = "54px 'Chewy', cursive";
+                ctx.fillStyle = "smoke-white";
+                ctx.fillText(count, 260, 300);
+                count--;
+                setTimeout(countdown, 700);
+            }
+            else {
+                gameEngine()
+            }
+        }
         
         function handleRestart(){
             document.location.reload();
@@ -172,15 +188,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: name,
                 score: score
             }
-            console.log(data)
             ref.push(data);
             handleRestart();
         }
     
         function drawScore() {
             ctx.font = "48px 'Chewy', cursive";
-            ctx.fillStyle = "white";
-            ctx.fillText(score, 275, 50);
+            ctx.fillStyle = "black";
+            ctx.fillText(score, 260, 50);
         };
         
     
@@ -193,26 +208,21 @@ document.addEventListener('DOMContentLoaded', () => {
             ship.draw();
             requestAnimationFrame(gameEngine)
         };
-        gameEngine();
+
+
+        countdown();
+
+        // Helper functions
+        function sleep(time) {
+            return new Promise((resolve) => setTimeout(resolve, time));
+        }
+
     })
 
 
     
 
-    // Helper functions
-    function sleep(time) {
-        return new Promise((resolve) => setTimeout(resolve, time));
-    }
-    
-    // Firebase query
-    // const query = database().ref().child('scores/')
-    //     .orderByChild("score").limitToLast(10);
-    // let count = 10;
-    // query.on('child_added', (snapshot) => {
-    //     childScore = snapshot.val();
-    //     let scoreBoard = document.getElementById("leaderboard");
-    //     scoreBoard.innerHTML = `<div>Round: ${childScore.round} -  ${childScore.name.toUpperCase()} ${childScore.score}</div><br/>` + scoreBoard.innerHTML;
-    //     count--;
-    // });
+
+
 
 })

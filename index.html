@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="./src/css/reset.css">
     <link rel="stylesheet" href="./src/css/style.css">
     <title>Space Dodge</title>
@@ -19,7 +20,9 @@
 
     <div class="main-container">
 
+
         <div class="leaderboard">
+            <h3>Top Scores</h3>
             <ul id="leaderboard-list">
             </ul>
         </div>
@@ -27,20 +30,38 @@
         <div class="center">
 
             <canvas id="canvas" width="550" height="600"></canvas>
-            <button type="button" id="startButton">Start Game</button>
+            <button type="button" id="startButton">Start Game!</button>
 
             <div id="gameover">
-                <p class="gameover-title">Game Over</p>
+                <p class="gameover-title">Game Over!</p>
                 <p id='restart-button'>Restart?</p>
                 <p id="score"></p>
                 
-                <input id="initial-input" type="text" placeholder="Your Initials" value="">
+                <input id="initial-input" type="text" placeholder="Your Initials">
                 <button id="submit-button">Submit</button>
             </div>
 
         </div>
 
-        <div class="right">
+            <div class="right">
+
+                <div id="icons">
+                    <a href="https://github.com/MCavi">
+                        <i class="fab fa-github-square"></i>
+                    </a>
+                </div>
+
+                <div id="icons">
+                    <a href="https://www.linkedin.com/in/marcus-cavini-844366183/">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+
+                <div id="icons">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                
+            </div>
 
         </div>
 
