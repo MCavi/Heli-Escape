@@ -52,11 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for ( let idx = 0; idx < highScores.length; idx++ ) {
             if ( highScores[idx].name && highScores[idx].score && !document.getElementById('9') ) {
-                const name = highScores[idx].name;
-                const score = highScores[idx].score;
                 const li = document.createElement( 'li' );
                 li.setAttribute( "id", idx );
-                li.innerHTML = name + " :   " + score;
+                li.innerHTML = highScores[idx].name + " :   " + highScores[idx].score;
                 ul.appendChild(li);
             };
         };
@@ -80,8 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // ---------------------------------------------------------------------//
     // ---------------------------------------------------------------------//
     document.getElementById('startButton').addEventListener('click', () => {
-        const startButton = document.getElementById('startButton');
-        startButton.style.display = 'none';
+        document.getElementById('startButton').style.display = 'none';
+        document.getElementById('instructions1').style.display = 'none';
+        document.getElementById('instructions2').style.display = 'none';
+        
         
         document.getElementById("restart-button").onclick = () => { handleRestart() };
         document.getElementById('submit-button').onclick = () => { handleSubmit() };

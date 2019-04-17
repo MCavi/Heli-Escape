@@ -127,6 +127,31 @@ a {
     background: transparent;
 }
 
+#instructions1 {
+    position: absolute;
+    top: 78%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Chewy', cursive;
+    font-size: 24px;
+    color: black;
+    display: none;
+}
+
+#instructions2 {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Chewy', cursive;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+
+}
+
+
+
 .gameover-title {
     margin: 0;
     padding: 0;
