@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ref = database.ref('scores');
 
     ref.on('value', gotData, errData);
-
+    
     function gotData(data) {
         const scores = data.val();
         // console.log(data);
@@ -51,13 +51,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         for ( let idx = 0; idx < highScores.length; idx++ ) {
-            const name = highScores[idx].name;
-            const score = highScores[idx].score;
-            const li = document.createElement( 'li' );
-            li.setAttribute("id", "leaderboard-item");
-            li.innerHTML = name + " :   " + score;
-            ul.appendChild(li);
-        }
+            if ( highScores[idx].name && highScores[idx].score && !document.getElementById('9') ) {
+                const name = highScores[idx].name;
+                const score = highScores[idx].score;
+                const li = document.createElement( 'li' );
+                li.setAttribute( "id", idx );
+                li.innerHTML = name + " :   " + score;
+                ul.appendChild(li);
+            };
+        };
         
     };
 
