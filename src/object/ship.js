@@ -14,7 +14,7 @@ class Ship {
         this.frameCount = 0;
         this.tilt = 0;
         this.helicopter = new Image();
-        this.helicopter.src = './src/assets/helicopter-spritesheet.png';
+        this.helicopter.src = './src/assets/helicopter-spritesheet(1).png';
         this.addListeners();
     };
 

@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function gotData(data) {
         const scores = data.val();
-        // console.log(data);
         const keys = Object.keys(scores);
         const scoreList = []
         for (let idx = 0; idx < keys.length; idx++) {
