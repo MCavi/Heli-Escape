@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function gotData(data) {
         const scores = data.val();
         const keys = Object.keys(scores);
+        console.log(scores);
         document.getElementById('submits').innerHTML = keys.length;
         const scoreList = []
         for (let idx = 0; idx < keys.length; idx++) {
