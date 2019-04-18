@@ -125,6 +125,17 @@ a {
     cursor: pointer;
     outline: none;
     background: transparent;
+    animation:blinkingText 1.3s infinite;
+}
+
+#startButton:hover {
+    color: whitesmoke;
+}
+
+@keyframes blinkingText{
+   0%{     color: rgb(70, 70, 70);    }
+   50%{    color: transparent; }
+   100%{   color: rgb(48, 48, 48);    }
 }
 
 #instructions1 {
@@ -184,13 +195,6 @@ a {
 
 #restart-button {
     cursor: pointer;
-    animation:blinkingText 1.3s infinite;
-}
-
-@keyframes blinkingText{
-   0%{     color: rgb(70, 70, 70);    }
-   50%{    color: transparent; }
-   100%{   color: rgb(48, 48, 48);    }
 }
 
 #restart-button:hover {
