@@ -2,6 +2,8 @@
 ### Live Link
 https://mcavi.github.io/Heli-Escape/
 
+![Heli Escape](HeliGif.gif)
+
 ### Space Dodge
 Navigate a spaceship through obstacles by switching the direction in which it flies.
 
