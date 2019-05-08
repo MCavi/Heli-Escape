@@ -1,5 +1,3 @@
-
-
 class Ship {
     constructor(ctx){
         this.ctx = ctx;
@@ -31,18 +29,15 @@ class Ship {
 
         this.x += this.hSpeed;
         
-        // helicopter.onload = () => {
-            this.ctx.drawImage(this.helicopter, 
+        this.ctx.drawImage(this.helicopter, 
                                 0, 
                                 this.sprites[spriteFrame], 
-                                // 159,
                                 345,
                                 135,
                                 this.x, 
                                 this.y, 
                                 this.width, 
                                 this.height);
-        // };
     };
 
     addListeners(){

@@ -1,15 +1,8 @@
 import Ship from '../object/ship';
 import Gate from '../object/gate';
 
-// ---------------------------------------------------------------------//
-// ---------------------------------------------------------------------//
-// ---------------------------------------------------------------------//
-// ---------------------------------------------------------------------//
-// ---------------------------------------------------------------------//
 document.addEventListener('DOMContentLoaded', () => {
     
-    
-
     // Firebase Config
     const firebaseConfig = {
         apiKey: "AIzaSyDMyAUaLi0HoaZsTsfFUJ7v0KjPSM5iERc",
@@ -30,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function gotData(data) {
         const scores = data.val();
         const keys = Object.keys(scores);
-        console.log(scores);
         document.getElementById('submits').innerHTML = keys.length;
         const scoreList = []
         for (let idx = 0; idx < keys.length; idx++) {
@@ -70,14 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Canvas
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
-
     const ship = new Ship(ctx);
 
-
-    // ---------------------------------------------------------------------//
-    // ---------------------------------------------------------------------//
-    // ---------------------------------------------------------------------//
-    // ---------------------------------------------------------------------//
     document.getElementById('startButton').addEventListener('click', () => {
         document.getElementById('startButton').style.display = 'none';
         document.getElementById('instructions1').style.display = 'none';
